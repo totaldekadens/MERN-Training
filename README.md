@@ -14,9 +14,9 @@ The project he did during the training left me with some development opportuniti
 
 To do:
 
-* Convert all class-components to functional components.
-* Change axios to fetch.
-* Add validation to form (simple)
+* Convert all class-components to functional components. ✅
+* Change axios to fetch. ✅
+* Add validation to form (simple) ✅
 * Complete the form so it matches the player model (Schema) incl. validation.
 * Make it possible to delete player (client)
 * Make it possible to update player (client)
