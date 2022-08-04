@@ -28,6 +28,8 @@ For comparison check folder: original_files
 
 ## Installing
 
+Make sure you have MongoDB.
+
 Open project in your code editor
 * Open folder: backend 
 * Create a file named .babelrc containing this: 
