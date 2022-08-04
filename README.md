@@ -24,3 +24,25 @@ To do:
 
 
 For comparison check folder: original_files
+
+
+## Installing
+
+Open project in your code editor
+* Open folder: backend 
+* Create a file named .babelrc containing this: 
+
+![image](https://user-images.githubusercontent.com/90898648/182936439-1df458b6-1938-46da-b8ca-7c3180263d8c.png)
+
+
+Overview: 
+
+![image](https://user-images.githubusercontent.com/90898648/182936222-54b01dba-b924-4391-918a-89ff10e160c5.png)
+
+Open terminal. Make sure you are standing in the backend folder.
+-	Npm i
+-	Npm start
+
+Redirect to folder frontend and repeat the tasks. 
+
+
