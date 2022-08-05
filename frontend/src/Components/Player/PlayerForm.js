@@ -23,6 +23,7 @@ const PlayerForm = () => {
             
             if(Object.keys(checkError).length > 0) {
                 setErrors(checkError)
+                console.log("Player NOT added to the list"); 
                 return
             }
 
@@ -37,11 +38,12 @@ const PlayerForm = () => {
             let result = await response.json();
 
             if(result) {
-                alert("Player added to the list" ); // Module will be added later
+                console.log("Player added to the list" ); // Module will be added later
                 setNewPlayer(defaultPlayer);
+                setErrors(defaultPlayer);
 
             } else {
-                alert("Player NOT added to the list"); // Module will be added later
+                console.log("Player NOT added to the list"); // Module will be added later
             }
 
         }catch(err) {
@@ -55,22 +57,22 @@ const PlayerForm = () => {
             <form className="col s12" onSubmit={submitPlayer}>
                 <div className="row">
                     <div className="input-field col s6">
-                        <input id="firstName" onChange={(event) => {setNewPlayer(currentState => ({ ...currentState, firstName: event.target.value}))}} value={newPlayer.firstName} type="text" required />
-                        <label htmlFor="firstName">* First Name</label><p>{errors.firstName ? errors.firstName : ""}</p>
+                        <input id="firstName" onChange={(event) => {setNewPlayer(currentState => ({ ...currentState, firstName: event.target.value}))}} value={newPlayer.firstName} type="text" />
+                        <label htmlFor="firstName">* First Name</label><p style={{color: "red", margin: "0"}}>{errors.firstName ? errors.firstName : ""}</p>
                     </div>
                     <div className="input-field col s6">
-                        <input id="lastName" onChange={(event) => {setNewPlayer(currentState => ({ ...currentState, lastName: event.target.value}))}} value={newPlayer.lastName} type="text" required />
-                        <label htmlFor="lastName">* Last Name</label><p>{errors.lastName ? errors.lastName : ""}</p>
+                        <input id="lastName" onChange={(event) => {setNewPlayer(currentState => ({ ...currentState, lastName: event.target.value}))}} value={newPlayer.lastName} type="text" />
+                        <label htmlFor="lastName">* Last Name</label><p style={{color: "red", margin: "0"}}>{errors.lastName ? errors.lastName : ""}</p>
                     </div>
                 </div>
                 <div className="row">
-                    <div className="input-field col s6">
-                        <input id="phone" onChange={(event) => {setNewPlayer(currentState => ({ ...currentState, phone: event.target.value}))}} value={newPlayer.phone}  type="number" />
-                        <label htmlFor="phone">Phone</label><p>{errors.phone ? errors.phone : ""}</p>
+                    <div className="input-field col s6" >
+                        <input id="phone" onChange={(event) => {setNewPlayer(currentState => ({ ...currentState, phone: Number(event.target.value)}))}} value={newPlayer.phone} type="number" />
+                        <label htmlFor="phone">Phone</label><p style={{color: "red", margin: "0"}}>{errors.phone ? errors.phone : ""}</p>
                     </div>
-                    <div className="input-field col s6">
+                    <div className="input-field col s6" >
                         <input id="email" onChange={(event) => {setNewPlayer(currentState => ({ ...currentState, email: event.target.value}))}} value={newPlayer.email}  type="email" />
-                        <label htmlFor="email">Email</label><p>{errors.email ? errors.email : ""}</p>
+                        <label htmlFor="email">* Email</label><p style={{color: "red", margin: "0"}}>{errors.email ? errors.email : ""}</p>
                     </div>
                 </div>
                 <button className='btn waves-effect waves-light' type='submit' name='action'>Add player</button>
