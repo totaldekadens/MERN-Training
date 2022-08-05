@@ -38,6 +38,6 @@ For comparison check folder: original_files
     -	Npm i
     -	Npm start
 
-Redirect to folder frontend and repeat the tasks. 
+Redirect to folder frontend and repeat the steps. 
 
 
