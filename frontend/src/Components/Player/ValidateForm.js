@@ -5,9 +5,20 @@ const validateForm = (player) => {
 
     if(player.firstName == "") {
         errors.firstName = 'Required';
-    } else if(player.lastName == "") {
+    } 
+
+    if(player.lastName == "") {
         errors.lastName = 'Required';
-    } else if(!player.phone == "" && player.phone.length < 6) {
+    } 
+
+    if(player.email == "") {
+        errors.email = 'Required';
+        
+    } else if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(player.email)) {
+        errors.email = 'invalid email address'
+    }
+
+    if(!player.phone == "" && player.phone.length < 6) {
         errors.phone = 'Phonenumber needs to be more than 6 numbers';
     } 
 
