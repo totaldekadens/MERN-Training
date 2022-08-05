@@ -16,11 +16,11 @@ To do:
 
 * Convert all class-components to functional components. ✅
 * Change axios to fetch. ✅
+* Make it possible to delete player (client) ✅
+* Make it possible to update player (client) ✅
 * Add form validation (client side - simple) ✅
 * Add form validation (server side - simple) 
 * Complete the form so it matches the player model (Schema) incl. validation.
-* Make it possible to delete player (client) ✅
-* Make it possible to update player (client)
 * Design/Styling (incl responsivity). Change from Materialize to MUI?
 
 
