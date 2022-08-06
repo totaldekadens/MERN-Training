@@ -3,6 +3,7 @@ import PlayerList from './Player/PlayerList';
 import PlayerSingle from './Player/PlayerSingle';
 import AddPlayerForm from './Interaction/AddPlayerForm';
 import Modal from './Modal/Modal';
+import { getAllPlayers } from '../Helpers/FetchHelper';
 
 const App = () => { 
 
@@ -15,21 +16,24 @@ const App = () => {
   }
 
   useEffect( () => {
-    const url = 'http://localhost:4000/players';
 
     (async () => {
       
       try {
-        const response = await fetch(url)
-        const result = await response.json();
 
-        setPlayers(result)
+        let result = await getAllPlayers();
 
+        if(result) {
+          setPlayers(result);
+        } else {
+          console.log("No players found");
+        }
+        
       } catch(err) {
           console.error(err)
       }
       }) ();
-  }, [players]);
+  }, [players]); // Todo: change "players" . Infinityloop atm.
     
     return (
       <>

@@ -1,10 +1,11 @@
+import { WavesBtnClose } from '../Interaction/Buttons'
 
 const Modal = ({ shouldShow, onRequestClose, children }) => {
 
 	return shouldShow ? (
-		<div style={ModalBackground} onClick={onRequestClose}>
+		<div style={ModalBackground}>
 			<div style={ModalBody} onClick={e => e.stopPropagation()}>
-				<button  className='btn waves-effect waves-light red lighten-3' onClick={onRequestClose}>Close</button>
+				<WavesBtnClose handleClick={onRequestClose}/>
 				{children}
 			</div>
 		</div>
@@ -28,7 +29,6 @@ const ModalBody = {
 	padding: "20px",
 	width: "50%",
     borderRadius: "10px"
-    
 };
 
 export default Modal
