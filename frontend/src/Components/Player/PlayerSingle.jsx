@@ -12,10 +12,14 @@ const PlayerSingle = (props) => {
                 <div className="card">
                     <div className="card-image">
                         <img src="soccer.jpeg" alt='bild' />
-                        <span className="card-title">{props.player.firstName} {props.player.lastName}</span>
                         {Object.keys(props.player).length > 0 ? 
-                            <div onClick={() => setShouldShowModal(!shouldShowModal) } className="btn-floating halfway-fab" style={{width: "100px", textAlign: "center", borderRadius: "5px"}}>Update player</div> 
-                        : ""} 
+                            <>
+                            <span className="card-title">{props.player.firstName} {props.player.lastName}</span>
+                            <div onClick={() => setShouldShowModal(!shouldShowModal) } className="btn-floating halfway-fab" style={{width: "100px", textAlign: "center", borderRadius: "5px"}}>Update player</div>
+                            </>
+                        : 
+                            ""
+                        } 
                     </div>
                     {Object.keys(props.player).length > 0 ? 
                         <>
@@ -27,12 +31,18 @@ const PlayerSingle = (props) => {
                             Team: {props.player.team}
                         </div>
                         </>
-                    : ""}
+                    : 
+                        ""
+                    }
                 </div>
             </div>
         </div>
         <Modal shouldShow={shouldShowModal} onRequestClose={() => setShouldShowModal(false)} >
-            <UpdatePlayerForm player={props.player}/>
+            {Object.keys(props.player).length > 0 ? 
+                <UpdatePlayerForm player={props.player}/>
+            : 
+                <h3>Something went wrong</h3>
+            }
         </Modal> 
         </>
     );
