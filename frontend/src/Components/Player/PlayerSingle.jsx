@@ -1,9 +1,16 @@
-import React, { useState } from 'react';
-import Modal from '../Modal/Modal';
+import React, { useState, useContext } from 'react';
+import Modal from '../Modals/Modal';
 import UpdatePlayerForm from '../Interaction/UpdatePlayerForm';
+import { CurrentPlayerContext } from '../../Context/CurrentPlayerProvider';
 
-const PlayerSingle = (props) => {
-    const [shouldShowModal, setShouldShowModal] = useState(false)
+const PlayerSingle = () => {
+
+    // Context
+    const {currentPlayer} = useContext(CurrentPlayerContext);
+
+    // States
+    const [shouldShowModal, setShouldShowModal] = useState(false);
+    
 
     return ( 
         <>
@@ -12,23 +19,23 @@ const PlayerSingle = (props) => {
                 <div className="card">
                     <div className="card-image">
                         <img src="soccer.jpeg" alt='bild' />
-                        {Object.keys(props.player).length > 0 ? 
+                        {Object.keys(currentPlayer).length > 0 ? 
                             <>
-                            <span className="card-title">{props.player.firstName} {props.player.lastName}</span>
+                            <span className="card-title">{currentPlayer.firstName} {currentPlayer.lastName}</span>
                             <div onClick={() => setShouldShowModal(!shouldShowModal) } className="btn-floating halfway-fab" style={{width: "100px", textAlign: "center", borderRadius: "5px"}}>Update player</div>
                             </>
                         : 
                             ""
                         } 
                     </div>
-                    {Object.keys(props.player).length > 0 ? 
+                    {Object.keys(currentPlayer).length > 0 ? 
                         <>
                         <div className="card-content">
-                            <p>Phone: {props.player.phone} - Email: {props.player.email}</p>
-                            <p>Strength: {props.player.strength} - Endurance: {props.player.endurance}</p> 
+                            <p>Phone: {currentPlayer.phone} - Email: {currentPlayer.email}</p>
+                            <p>Strength: {currentPlayer.strength} - Endurance: {currentPlayer.endurance}</p> 
                         </div>
                         <div className='card-action'>
-                            Team: {props.player.team}
+                            Team: {currentPlayer.team}
                         </div>
                         </>
                     : 
@@ -38,10 +45,10 @@ const PlayerSingle = (props) => {
             </div>
         </div>
         <Modal shouldShow={shouldShowModal} onRequestClose={() => setShouldShowModal(false)} >
-            {Object.keys(props.player).length > 0 ? 
-                <UpdatePlayerForm player={props.player}/>
+            {Object.keys(currentPlayer).length > 0 ? 
+                <UpdatePlayerForm />
             : 
-                <h3>Something went wrong</h3>
+                <h3>Player was not found</h3>
             }
         </Modal> 
         </>

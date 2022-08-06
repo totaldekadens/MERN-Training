@@ -23,6 +23,7 @@ const AddPlayerForm = () => {
         try {
             event.preventDefault();
 
+            // Validates values from form
             const checkError = validateForm(newPlayer);
             
             if(Object.keys(checkError).length > 0) {
@@ -30,15 +31,16 @@ const AddPlayerForm = () => {
                 return
             }
 
+            // Adds new player to database
             let result = await addPlayer(newPlayer)
 
             if(result) {
-                console.log("Player added to the list" );
+                console.log("Player was succesfully added");
                 setNewPlayer(defaultValues);
                 setErrors(defaultValues); 
 
             } else {
-                console.log("Player NOT added to the list");
+                console.log("Player was not added to database");
             }
 
         }catch(err) {
@@ -47,7 +49,13 @@ const AddPlayerForm = () => {
     }
 
     return (  
-        <PlayerForm setState={setNewPlayer} state={newPlayer} errors={errors} text={textToForm} handleClick={handleClick}/>      
+        <PlayerForm 
+            setState={setNewPlayer} 
+            state={newPlayer} 
+            errors={errors} 
+            text={textToForm} 
+            handleClick={handleClick}
+        />      
     );
 }
 
