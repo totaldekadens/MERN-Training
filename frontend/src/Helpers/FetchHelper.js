@@ -10,12 +10,13 @@ const makeRequest = async (url, body) => {
     }
 }
 
-
+// GET All
 export const getAllPlayers = async () => {
     let result = await makeRequest('http://localhost:4000/players');
     return result;
 }
 
+// DELETE
 export const deletePlayer = async (playerId) => {
     const requestOptions = {
         method: 'DELETE',
@@ -27,6 +28,7 @@ export const deletePlayer = async (playerId) => {
     return result;
 }
 
+// POST
 export const addPlayer = async (newPlayer) => {
  
     const requestOptions = {
@@ -40,6 +42,7 @@ export const addPlayer = async (newPlayer) => {
     return result;
 }
 
+// PUT
 export const modifyPlayer = async (playerId, updatePlayer) => {
     const requestOptions = {
         method: 'PUT',

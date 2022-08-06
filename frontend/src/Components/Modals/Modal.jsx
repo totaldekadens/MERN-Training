@@ -9,18 +9,21 @@ const Modal = ({ shouldShow, onRequestClose, children }) => {
 				{children}
 			</div>
 		</div>
-	) : null;
+	) 
+	: 
+		null;
 }
 
+// CSS-properties
 const ModalBackground = {
-        position: "fixed",
-        zIndex: 1,
-        left: 0,
-        top: 0,
-        width: "100%",
-        height: "100%",
-        overflow: "auto",
-        backgroundColor: "rgba(0, 0, 0, 0.5)"
+	position: "fixed",
+	zIndex: 1,
+	left: 0,
+	top: 0,
+	width: "100%",
+	height: "100%",
+	overflow: "auto",
+	backgroundColor: "rgba(0, 0, 0, 0.5)"
 }
 
 const ModalBody = {
