@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
-// Det som läggs in i objektet will be values that your database is taking, and what the types they're are expecting.
+// Represents Player collection in MongoDB  
 export const PlayerSchema = new Schema({
     firstName: {
         type: String,
