@@ -20,7 +20,10 @@ To do:
 * Make it possible to update player (client) ✅
 * Add form validation (client side - simple) ✅
 * Add form validation (server side - simple) 
+* Add User Authentication with JWT ✅ (ref. bezKoder)
+* Add signin and signup form and connect it with server side
 * Complete the form so it matches the player model (Schema) incl. validation.
+* Make it possible to add and change pic on player. 
 * Design/Styling (incl responsivity). Change from Materialize to MUI?
 
 
