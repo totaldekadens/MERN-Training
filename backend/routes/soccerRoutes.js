@@ -1,6 +1,6 @@
 import { addNewPlayer, getPlayers, getPlayerWithID, updatePlayer, deletePlayer } from '../controllers/playerControllers';
 
-const routes = (app) => {
+const playerRoutes = (app) => {
     app.route('/players')
         // GET-endpoint
         .get(getPlayers)
@@ -16,4 +16,4 @@ const routes = (app) => {
         .delete(deletePlayer);
 }
 
-export default routes;
+export default playerRoutes;

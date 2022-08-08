@@ -22,7 +22,13 @@ const PlayerSingle = () => {
                         {Object.keys(currentPlayer).length > 0 ? 
                             <>
                             <span className="card-title">{currentPlayer.firstName} {currentPlayer.lastName}</span>
-                            <div onClick={() => setShouldShowModal(!shouldShowModal) } className="btn-floating halfway-fab" style={{width: "100px", textAlign: "center", borderRadius: "5px"}}>Update player</div>
+                            <div 
+                                onClick={() => setShouldShowModal(!shouldShowModal) } 
+                                className="btn-floating halfway-fab" 
+                                style={{width: "100px", textAlign: "center", borderRadius: "5px"}}
+                            >
+                                Update player
+                            </div>
                             </>
                         : 
                             ""
