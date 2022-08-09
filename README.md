@@ -43,4 +43,8 @@ For comparison check folder: original_files
 
 Redirect to folder frontend and repeat the steps. 
 
+# Further steps will be continued at this repo: 
+
+### https://github.com/totaldekadens/MERN-Training-React.ts
+
 
